@@ -1,0 +1,19 @@
+{
+  "name": "hlog_server",
+  "version": "1.0.0",
+  "description": "Hlog의 서버입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hong-JunHyeok/Hlog_server.git"
+  },
+  "author": "Hong-JunHyeok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hong-JunHyeok/Hlog_server/issues"
+  },
+  "homepage": "https://github.com/Hong-JunHyeok/Hlog_server#readme"
+}
