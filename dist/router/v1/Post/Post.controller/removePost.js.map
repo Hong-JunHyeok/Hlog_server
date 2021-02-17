@@ -1,0 +1,1 @@
+{"version":3,"file":"removePost.js","sourceRoot":"","sources":["../../../../../src/router/v1/Post/Post.controller/removePost.ts"],"names":[],"mappings":";;;;;;;;;;;AAEA,kBAAe,CAAO,GAAY,EAAE,GAAa,EAAE,EAAE;IACjD,GAAG,CAAC,IAAI,CAAC;QACL,OAAO,EAAE,uBAAuB;KACnC,CAAC,CAAA;AACN,CAAC,CAAA,CAAA"}
