@@ -8,10 +8,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.json({
-        message: "create post connected",
-    });
+    const { title, nickname, content } = req.body;
+    try {
+        const postScheme = new Post_1.default({
+            title,
+            nickname,
+            content,
+        });
+        const newPost = yield postScheme.save();
+        res.status(200).json({
+            newPost,
+            message: "create post success",
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            message: "create post fail",
+            error,
+        });
+    }
 });
 //# sourceMappingURL=createPost.js.map

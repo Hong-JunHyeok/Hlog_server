@@ -8,10 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.json({
-        message: "get post connected",
-    });
+    const { idx } = req.params;
+    try {
+        Post_1.default.findOne({ _id: idx }).then((response) => res.status(200).json({
+            message: "get post success",
+            data: response,
+        }));
+    }
+    catch (error) {
+        res.status(500).json({
+            message: "get post error",
+        });
+    }
 });
 //# sourceMappingURL=getPost.js.map
