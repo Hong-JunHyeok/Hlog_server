@@ -5,10 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const PostScheme = new mongoose_1.default.Schema({
-    idx: {
-        type: Number,
-        unique: true,
-    },
     title: {
         type: String,
         required: true,
@@ -29,7 +25,6 @@ const PostScheme = new mongoose_1.default.Schema({
     modifed_at: {
         type: Date,
         required: false,
-        default: Date.now(),
     },
 });
 exports.default = mongoose_1.default.model("post", PostScheme);

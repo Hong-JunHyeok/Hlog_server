@@ -15,18 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { idx } = req.params;
-        const updateObject = req.body;
-        Post_1.default.updateOne({ _id: idx }, updateObject).then((response) => {
-            res.json({
-                message: "update post success",
-            });
-        });
+        Post_1.default.remove().then(() => res.json({
+            message: "remove post success",
+        }));
     }
     catch (error) {
         res.json({
-            message: "update post fail",
+            message: "remove post fail",
         });
     }
 });
-//# sourceMappingURL=updatePost.js.map
+//# sourceMappingURL=removePosts.js.map

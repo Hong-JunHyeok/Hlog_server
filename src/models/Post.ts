@@ -1,10 +1,6 @@
 import mongoose from "mongoose"
 
 const PostScheme = new mongoose.Schema({
-    idx: {
-        type: Number,
-        unique: true,
-    },
     title: {
         type: String,
         required: true,
@@ -25,7 +21,6 @@ const PostScheme = new mongoose.Schema({
     modifed_at: {
         type: Date,
         required: false,
-        default: Date.now(),
     },
 })
 

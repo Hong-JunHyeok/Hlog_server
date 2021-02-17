@@ -4,10 +4,10 @@ import PostScheme from "../../../../models/Post"
 export default async (req: Request, res: Response) => {
     const { idx } = req.params
     try {
-        PostScheme.findOne({ _id: idx }).then((response) =>
+        PostScheme.findOne({ _id: idx }).then((data) =>
             res.status(200).json({
                 message: "get post success",
-                data: response,
+                data,
             })
         )
     } catch (error) {

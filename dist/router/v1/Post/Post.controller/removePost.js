@@ -8,10 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.json({
-        message: "remove post connected",
-    });
+    try {
+        const { idx } = req.body;
+        Post_1.default.remove();
+    }
+    catch (error) {
+        res.json({
+            message: "remove post fail",
+        });
+    }
 });
 //# sourceMappingURL=removePost.js.map

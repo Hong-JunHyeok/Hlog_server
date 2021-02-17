@@ -16,9 +16,9 @@ const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { idx } = req.params;
     try {
-        Post_1.default.findOne({ _id: idx }).then((response) => res.status(200).json({
+        Post_1.default.findOne({ _id: idx }).then((data) => res.status(200).json({
             message: "get post success",
-            data: response,
+            data,
         }));
     }
     catch (error) {
