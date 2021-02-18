@@ -22,9 +22,8 @@
 DB_URL이라는 config var을 추가해주고 , 그 value에
 몽고db에서 클러스터를 만들때 제공해 줬던 url의 값을 연결해주면 되는 문제였다!! 이제 프론트를 빠르게 개발해보도록 하겠다.
 
-흑역사...
+~~ 흑역사...
 
-```
 noSQL로 개발을 해보았는데 돈이 없는 관계로 heroku에 배포해서 무료로 만들려고 했다... 그런데 mongoDB 지원이 끊겼다고 한다.
 ![image](https://user-images.githubusercontent.com/48292190/108331065-b9ac0100-7211-11eb-9825-93a5fb511a50.png)
 ![image](https://user-images.githubusercontent.com/48292190/108331412-15768a00-7212-11eb-9e9e-042715d6fb8b.png)
@@ -35,4 +34,3 @@ noSQL로 개발을 해보았는데 돈이 없는 관계로 heroku에 배포해�
 물론 돈을 추가하고 다른 호스팅 서버를 파는 방법이 있지만,
 그 방법은 나중에 고민하도록 하고, 지금은 HLOG의 프론트와 연결해서
 localhost로만 돌아가도록 구현할려고 한다...
-```
