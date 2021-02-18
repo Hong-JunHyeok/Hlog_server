@@ -1,7 +1,27 @@
 import { Request, Response } from "express"
+import { createToken } from "../../../../lib/token"
+import { UserType } from "../../../../types/UserType"
+import UserScheme from "../../../../models/User"
 
 export default async (req: Request, res: Response) => {
-    res.json({
-        message: "Login Connect",
-    })
+    const { email, password } = req.body
+    try {
+        await UserScheme.findOne({ email: email, password: password }).then((userData) => {
+            if (!userData) {
+                res.status(401).json({
+                    message: "없는 사용자 입니다.",
+                })
+            } else {
+                res.status(200).json({
+                    userData,
+                    token: createToken(userData),
+                })
+            }
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "server 오류",
+            error,
+        })
+    }
 }

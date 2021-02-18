@@ -5,7 +5,7 @@ import post from "./Post"
 
 const router = Router()
 
-router.use(auth)
+router.use("/auth", auth)
 router.use(comment)
 router.use(post)
 

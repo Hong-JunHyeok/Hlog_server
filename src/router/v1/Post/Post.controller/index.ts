@@ -15,7 +15,7 @@ router.post("/", createPost)
 router.delete("/", removePosts)
 
 router.delete("/:idx", removePost)
-router.patch("/", updatePost)
+router.patch("/:idx", updatePost)
 router.get("/:idx", getPost)
 router.get("/", getPosts)
 
