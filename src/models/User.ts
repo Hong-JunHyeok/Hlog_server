@@ -10,21 +10,11 @@ const UserScheme: mongoose.Schema<
         type: String,
         required: true,
         unique: true,
-        validate(value: string) {
-            if (!validate.isEmail(value)) {
-                throw new Error("Email is invalid")
-            }
-        },
         trim: true,
     },
     password: {
         type: String,
         required: true,
-        validate(value: string) {
-            if (!validate.isStrongPassword(value)) {
-                throw new Error("password is invalid")
-            }
-        },
         trim: true,
     },
     nickname: {
