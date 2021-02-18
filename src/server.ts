@@ -17,6 +17,6 @@ mongoose
     .then(() => console.log("DB connected"))
     .catch((err) => console.log(err))
 
-server.listen(SERVER_PORT, () => {
+server.listen(process.env.PORT || SERVER_PORT, () => {
     console.log(`server is listening ${SERVER_PORT}`)
 })
