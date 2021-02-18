@@ -18,5 +18,5 @@ mongoose
     .catch((err) => console.log(err))
 
 server.listen(process.env.PORT || SERVER_PORT, () => {
-    console.log(`server is listening ${SERVER_PORT}`)
+    console.log(`server is listening`)
 })
