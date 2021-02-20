@@ -24,9 +24,11 @@ exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 });
             }
             else {
+                const token = token_1.createToken(userData);
+                console.log(token);
                 res.status(200).json({
                     userData,
-                    token: token_1.createToken(userData),
+                    token,
                 });
             }
         });

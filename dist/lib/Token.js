@@ -7,10 +7,12 @@ exports.createToken = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const secretKeyConfig_1 = require("../config/secretKeyConfig");
 const createToken = (userData) => {
-    const { email, password } = userData;
+    const { email, password, nickname, name } = userData;
     const payload = {
         email,
         password,
+        nickname,
+        name,
     };
     const options = {
         expiresIn: "30d",

@@ -12,9 +12,11 @@ export default async (req: Request, res: Response) => {
                     message: "없는 사용자 입니다.",
                 })
             } else {
+                const token = createToken(userData)
+                console.log(token)
                 res.status(200).json({
                     userData,
-                    token: createToken(userData),
+                    token,
                 })
             }
         })

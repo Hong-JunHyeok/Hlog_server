@@ -3,10 +3,12 @@ import { SECRET_KEY } from "../config/secretKeyConfig"
 import { UserType } from "../types/UserType"
 
 export const createToken = (userData: any) => {
-    const { email, password } = userData
+    const { email, password, nickname, name } = userData
     const payload = {
         email,
         password,
+        nickname,
+        name,
     }
     const options: SignOptions = {
         expiresIn: "30d",

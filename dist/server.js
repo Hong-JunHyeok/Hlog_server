@@ -17,7 +17,7 @@ mongoose_1.default
 })
     .then(() => console.log("DB connected"))
     .catch((err) => console.log(err));
-server.listen(server_config_1.SERVER_PORT, () => {
-    console.log(`server is listening ${server_config_1.SERVER_PORT}`);
+server.listen(process.env.PORT || server_config_1.SERVER_PORT, () => {
+    console.log(`server is listening`);
 });
 //# sourceMappingURL=server.js.map
