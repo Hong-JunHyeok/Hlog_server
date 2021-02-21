@@ -15,11 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Post_1 = __importDefault(require("../../../../models/Post"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { title, nickname, content } = req.body;
+        const { title, nickname, content, thumnail } = req.body;
         Post_1.default.create({
             title,
             nickname,
             content,
+            thumnail,
         }).then((newPost) => res.status(200).json({
             newPost,
             message: "create post success",

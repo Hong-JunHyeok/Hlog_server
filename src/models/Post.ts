@@ -22,6 +22,9 @@ const PostScheme = new mongoose.Schema({
         type: Date,
         required: false,
     },
+    thumnail: {
+        type: String,
+    },
 })
 
 export default mongoose.model("post", PostScheme)
