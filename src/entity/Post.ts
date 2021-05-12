@@ -18,7 +18,9 @@ export default class Post extends BaseEntity {
   })
   title: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   thumnail: string;
 
   @Column({
