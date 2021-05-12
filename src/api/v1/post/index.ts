@@ -1,6 +1,6 @@
 import { Router } from "express";
 import createPost from "./post.ctrl/createPost";
-// import deletePost from "./post.ctrl/deletePost";
+import deletePost from "./post.ctrl/deletePost";
 // import getPost from "./post.ctrl/getPost";
 // import getPosts from "./post.ctrl/getPosts";
 // import modifyPost from './post.ctrl/modifyPost'
@@ -8,5 +8,6 @@ import createPost from "./post.ctrl/createPost";
 const router = Router();
 
 router.post("/", createPost);
+router.delete("/:idx", deletePost);
 
 export default router;
