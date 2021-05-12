@@ -25,6 +25,6 @@ export const blue = (...logs: string[]) => {
 //위험이나 경고등의 대한 로그
 export const yellow = (...logs: string[]) => {
   logs.forEach((log) => {
-    console.log(colors.white.bgYellow(log));
+    console.log(colors.black.bgYellow(log));
   });
 };
