@@ -8,11 +8,9 @@ export default async (req: Request, res: Response) => {
 
   if (isNaN(idx)) {
     logger.yellow("파라미터는 숫자(number)형식으로 전달해야 합니다.");
-    res.status(401).json({
+    return res.status(401).json({
       message: "파라미터는 숫자(number)형식으로 전달해야 합니다.",
     });
-
-    return;
   }
 
   try {
@@ -39,7 +37,6 @@ export default async (req: Request, res: Response) => {
         post,
       },
     });
-
   } catch (error) {
     logger.red(error);
     res.status(500).json({
