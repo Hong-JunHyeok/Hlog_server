@@ -1,14 +1,16 @@
-import "reflect-metadata";
-import * as express from "express";
+import "dotenv/config";
+import { createConnection } from "typeorm";
+import app from "./app";
 import * as logger from "./lib/logger";
 
-const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Hlog's REST API server");
-});
+createConnection()
+  .then((connection) => {
+    logger.green("DB연결에 성공했습니다.");
+  })
+  .catch((error) => logger.red("DB연결 과정에서 문제가 발생했습니다." , error));
 
-app.listen(PORT, () => {
-  logger.blue(`Server is running at ${PORT}port.`);
-});
+app.listen(PORT , () => {
+    logger.blue(`${PORT}번 포트에서 서버 실행중입니다. (http://localhost:8080/)`)
+})

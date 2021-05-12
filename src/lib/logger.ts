@@ -11,7 +11,7 @@ export const red = (...logs: string[]) => {
 //프로세스 처리에 대한 로그
 export const green = (...logs: string[]) => {
   logs.forEach((log) => {
-    console.log(colors.green(log));
+    console.log(colors.black.bgGreen(log));
   });
 };
 
